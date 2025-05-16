@@ -10,12 +10,6 @@ const Contact: React.FC = () => (
       <Typography>Email: junallendeguzman@gmail.com</Typography>
       <Typography>Phone: 09661837654</Typography>
       <Typography>Location: Cebu City</Typography>
-      <Typography>
-        Portfolio:{" "}
-        <Link href="https://allenpersonalproject.azurewebsites.net" target="_blank" rel="noopener">
-          Visit here
-        </Link>
-      </Typography>
     </Stack>
   </Paper>
 );

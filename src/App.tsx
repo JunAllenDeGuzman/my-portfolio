@@ -9,14 +9,16 @@ import Education from "./components/Education";
 import Certificates from "./components/Certificates";
 import References from "./components/References";
 import Contact from "./components/Contact";
+import Store from "./components/Store";
 import { Container, CssBaseline, createTheme, ThemeProvider } from "@mui/material";
 import { AnimatePresence } from "framer-motion";
+import { CartProvider } from "../src/components/context/CartContext";
 
 const AnimatedRoutes = () => {
   const location = useLocation();
 
   return (
-   <AnimatePresence mode="wait">
+    <AnimatePresence mode="wait">
       <Routes location={location} key={location.pathname}>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
@@ -26,6 +28,7 @@ const AnimatedRoutes = () => {
         <Route path="/certificates" element={<Certificates />} />
         <Route path="/references" element={<References />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/store" element={<Store />} />
       </Routes>
     </AnimatePresence>
   );
@@ -39,28 +42,26 @@ const App: React.FC = () => {
       createTheme({
         palette: {
           mode: darkMode ? "dark" : "light",
-          primary: {
-            main: "#1976d2",
-          },
-          secondary: {
-            main: "#ac3b61",
-          },
+          primary: { main: "#1976d2" },
+          secondary: { main: "#ac3b61" },
         },
       }),
     [darkMode]
   );
 
-  const toggleDarkMode = () => setDarkMode(prev => !prev);
+  const toggleDarkMode = () => setDarkMode((prev) => !prev);
 
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <Router>
-        <Navbar darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
-        <Container maxWidth="md" sx={{ mt: 4, mb: 4 }}>
-          <AnimatedRoutes />
-        </Container>
-      </Router>
+      <CartProvider>
+        <Router>
+          <Navbar darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
+          <Container maxWidth="md" sx={{ mt: 4, mb: 4 }}>
+            <AnimatedRoutes />
+          </Container>
+        </Router>
+      </CartProvider>
     </ThemeProvider>
   );
 };

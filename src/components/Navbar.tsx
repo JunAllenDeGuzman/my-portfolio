@@ -1,5 +1,5 @@
 import React from "react";
-import { AppBar, Toolbar, Tabs, Tab, Typography, IconButton, Switch, Box } from "@mui/material";
+import { AppBar, Toolbar, Tabs, Tab, Typography, Switch, Box } from "@mui/material";
 import { Link, useLocation } from "react-router-dom";
 
 interface NavbarProps {
@@ -16,11 +16,12 @@ const navItems = [
   { label: "Certificates", path: "/certificates" },
   { label: "References", path: "/references" },
   { label: "Contact", path: "/contact" },
+  { label: "Store", path: "/store" },
 ];
 
 const Navbar: React.FC<NavbarProps> = ({ darkMode, toggleDarkMode }) => {
   const location = useLocation();
-  const currentTab = navItems.findIndex(item => item.path === location.pathname);
+  const currentTab = navItems.findIndex((item) => item.path === location.pathname);
 
   return (
     <AppBar position="static">
@@ -49,22 +50,7 @@ const Navbar: React.FC<NavbarProps> = ({ darkMode, toggleDarkMode }) => {
 
         <Box sx={{ display: "flex", alignItems: "center", ml: 2 }}>
           <Switch checked={darkMode} onChange={toggleDarkMode} color="default" />
-          <IconButton
-            color="inherit"
-            aria-label="GitHub"
-            href="https://github.com/your-github-username"
-            target="_blank"
-            rel="noopener"
-          >
-          </IconButton>
-          <IconButton
-            color="inherit"
-            aria-label="LinkedIn"
-            href="https://linkedin.com/in/your-linkedin-id"
-            target="_blank"
-            rel="noopener"
-          >
-          </IconButton>
+          {/* Add your GitHub and LinkedIn icons/buttons here if needed */}
         </Box>
       </Toolbar>
     </AppBar>
