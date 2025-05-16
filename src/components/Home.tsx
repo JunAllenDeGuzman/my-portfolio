@@ -1,5 +1,5 @@
 import React from "react";
-import { Typography, Paper, Button, Stack, Avatar, Link, IconButton } from "@mui/material";
+import { Typography, Paper, Button, Stack, Avatar, IconButton } from "@mui/material";
 import { motion } from "framer-motion";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";

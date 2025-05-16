@@ -1,8 +1,6 @@
 import React from "react";
 import { AppBar, Toolbar, Tabs, Tab, Typography, IconButton, Switch, Box } from "@mui/material";
 import { Link, useLocation } from "react-router-dom";
-import GitHubIcon from "@mui/icons-material/GitHub";
-import LinkedInIcon from "@mui/icons-material/LinkedIn";
 
 interface NavbarProps {
   darkMode: boolean;

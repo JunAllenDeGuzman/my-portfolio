@@ -1,5 +1,5 @@
 import React from "react";
-import { Typography, Box, Paper } from "@mui/material";
+import { Typography, Paper } from "@mui/material";
 
 const About: React.FC = () => (
   <Paper elevation={3} sx={{ p: 4 }}>
