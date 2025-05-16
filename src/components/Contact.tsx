@@ -1,5 +1,5 @@
 import React from "react";
-import { Typography, Paper, Link, Stack } from "@mui/material";
+import { Typography, Paper, Stack } from "@mui/material";
 
 const Contact: React.FC = () => (
   <Paper elevation={3} sx={{ p: 4 }}>
